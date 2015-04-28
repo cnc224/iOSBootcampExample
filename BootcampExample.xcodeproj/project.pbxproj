@@ -13,6 +13,7 @@
 		834786F31AE81BED003EE498 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834786F21AE81BED003EE498 /* Images.xcassets */; };
 		834786F61AE81BED003EE498 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834786F41AE81BED003EE498 /* LaunchScreen.xib */; };
 		834787021AE81BED003EE498 /* BootcampExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834787011AE81BED003EE498 /* BootcampExampleTests.swift */; };
+		83B5D5301AEF6B070038E331 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B5D52F1AEF6B070038E331 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		834786FB1AE81BED003EE498 /* BootcampExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BootcampExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		834787001AE81BED003EE498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		834787011AE81BED003EE498 /* BootcampExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampExampleTests.swift; sourceTree = "<group>"; };
+		83B5D52F1AEF6B070038E331 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				834786EB1AE81BED003EE498 /* AppDelegate.swift */,
 				834786ED1AE81BED003EE498 /* ViewController.swift */,
+				83B5D52F1AEF6B070038E331 /* SettingsViewController.swift */,
 				834786EF1AE81BED003EE498 /* Main.storyboard */,
 				834786F21AE81BED003EE498 /* Images.xcassets */,
 				834786F41AE81BED003EE498 /* LaunchScreen.xib */,
@@ -214,6 +217,7 @@
 			files = (
 				834786EE1AE81BED003EE498 /* ViewController.swift in Sources */,
 				834786EC1AE81BED003EE498 /* AppDelegate.swift in Sources */,
+				83B5D5301AEF6B070038E331 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

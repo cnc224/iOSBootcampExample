@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "BootcampExample.ViewController.getTipSegment (BootcampExample.ViewController)() -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tipArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BootcampExample.SettingsViewController.getTipRates (BootcampExample.SettingsViewController)() -&gt; ():SettingsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "defaults.valueForKey(key)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6246" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6246" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="rx2-0M-3zC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tip Calculator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BootcampExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,6 +82,20 @@
                             <outletCollection property="gestureRecognizers" destination="0le-nj-ooS" appends="YES" id="0iM-Fu-H3H"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="B9A-2W-ki8">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="DeT-e4-XFU">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OCH-GI-GPh">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Lx6-gi-rck" kind="push" id="Mwg-og-aFo"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="jkC-3v-dLy" id="xhP-O2-FdS"/>
                         <outlet property="tipLabel" destination="P7g-By-1dh" id="4mA-ir-xqx"/>
@@ -96,7 +110,93 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="234" y="303"/>
+            <point key="canvasLocation" x="766" y="303"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Zf1-2l-RWC">
+            <objects>
+                <viewController id="Lx6-gi-rck" customClass="SettingsViewController" customModule="BootcampExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gGj-Oj-ie6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="f2b-wt-G9t">
+                                <rect key="frame" x="30" y="171" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="onTipRateChanged:" destination="Lx6-gi-rck" eventType="editingChanged" id="fwm-QN-RC8"/>
+                                    <action selector="onTipRateChanged:" destination="Lx6-gi-rck" eventType="editingDidEnd" id="m6E-Zb-MNe"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="OkS-6z-iQE">
+                                <rect key="frame" x="116" y="171" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="onTipRateChanged:" destination="Lx6-gi-rck" eventType="editingDidEnd" id="pLj-C0-AYk"/>
+                                    <action selector="onTipRateChanged:" destination="Lx6-gi-rck" eventType="editingChanged" id="xKA-x8-Kg9"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set default tip rates" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hAO-Af-eU9">
+                                <rect key="frame" x="30" y="126" width="261" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="NbG-eh-A85">
+                                <rect key="frame" x="202" y="171" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="onTipRateChanged:" destination="Lx6-gi-rck" eventType="editingDidEnd" id="d4F-4J-dus"/>
+                                    <action selector="onTipRateChanged:" destination="Lx6-gi-rck" eventType="editingChanged" id="rXX-iZ-Egy"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="spi-8s-dvB" appends="YES" id="qd8-Ji-FAU"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="sdn-Cu-hfp"/>
+                    <connections>
+                        <outlet property="tipRate1Field" destination="f2b-wt-G9t" id="ORe-YX-LWV"/>
+                        <outlet property="tipRate2Field" destination="OkS-6z-iQE" id="v0T-63-JnZ"/>
+                        <outlet property="tipRate3Field" destination="NbG-eh-A85" id="og3-7s-PEc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPf-aD-cnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="spi-8s-dvB">
+                    <connections>
+                        <action selector="onTap:" destination="Lx6-gi-rck" id="49J-Up-GxW"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1174" y="303"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ABR-SH-yu2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rx2-0M-3zC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6h7-gA-lIZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iCe-Bz-cWG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6EF-BG-wUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="303"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

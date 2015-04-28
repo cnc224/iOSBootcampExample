@@ -15,12 +15,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipSegment: UISegmentedControl!
     
-    var tipArray = [0.18, 0.20, 0.25]
+    var tipArray : [Int] = [18, 20, 25]
     var tipPerc = 0.18
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         billField.text = "Tap On"
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
@@ -43,7 +49,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func onTipSegmentChanged(sender: AnyObject) {
-        tipPerc = tipArray[tipSegment.selectedSegmentIndex]
+        tipPerc = Double(tipArray[tipSegment.selectedSegmentIndex])*0.01
         updateTotalAmount()
         setTipSegment()
     }
@@ -51,6 +57,7 @@ class ViewController: UIViewController {
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
+    
     
     func updateTotalAmount() {
         var billAmount = (billField.text as NSString).doubleValue
@@ -74,7 +81,16 @@ class ViewController: UIViewController {
             defaultTipSegmentIndex = defaults.integerForKey(tipIndexKey)
         }
         tipSegment.selectedSegmentIndex = defaultTipSegmentIndex
-        tipPerc = tipArray[tipSegment.selectedSegmentIndex]
+        
+        if (defaults.valueForKey(tipRateKey) != nil) {
+            tipArray = defaults.valueForKey(tipRateKey) as [Int]
+        }
+        
+        for (var i = 0;i < 3; ++i) {
+            tipSegment.setTitle(String(format: "%d%%",tipArray[i]), forSegmentAtIndex: i)
+        }
+        tipPerc = Double(tipArray[tipSegment.selectedSegmentIndex])*0.01
     }
+    var tipRateKey = "tipRateKey"
 }
 
