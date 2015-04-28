@@ -13,3 +13,4 @@ This is an iOS example project to calculate the tip by typing in bill amount.
 3. GIF walkthrough of all required and optional stories
    
 <img src="https://github.com/cnc224/iOSBootcampExample/blob/master/iOS.gif" alt="" width="300">
+<img src="https://github.com/cnc224/iOSBootcampExample/blob/master/iOS-1.gif" alt="" width="300">
